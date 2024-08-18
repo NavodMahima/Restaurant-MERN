@@ -1,13 +1,13 @@
 
 import './App.css'
-import './index.css';
+
 
 function App() {
 
 
   return (
    
-     <h1>නමෝ බුද්ධාය</h1> 
+     <h1 className='bg-green font-primary'>Hello</h1> 
     
   )
 }
