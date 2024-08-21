@@ -1,8 +1,27 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 import logo from '../../public/logo.png'
 import { BiPhoneCall } from "react-icons/bi";
 
 const Navbar = () => {
+  const [isSticky, setSticky] = useState(false);
+
+  //handle scroll function
+  useEffect( () =>{
+    const handleScroll = () =>{
+      const offset = window.scrollY;
+      if(offset > 0){
+        setSticky(true)
+      }else{
+        setSticky(false)
+      }
+    };
+    window.addEventListener("scroll",handleScroll);
+
+    return () => {
+      window.addEventListener("scroll",handleScroll);
+    }
+  },[])
+
   const navItems = 
   <>
   <li><a href='/'>Home</a></li>
@@ -29,8 +48,8 @@ const Navbar = () => {
       <li><a>Offers</a></li>
   </>
   return (
-    <header className='max-w-screen-2xl container mx-auto'>
-      <div className="navbar xl:px-24">
+    <header className='max-w-screen-2xl container mx-auto fixed top-0 left-0 right-0 transition-all ease-in-out'>
+      <div className={'navbar xl:px-24 ${isSticky ? "shadow-md bg-base-100 transition-all duration-300 ease-in-out" : ""}'}>
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
