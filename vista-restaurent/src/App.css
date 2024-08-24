@@ -13,3 +13,6 @@ header{
 .subtitle{
     @appky text-red uppercase tracking-wide font-medium text-lg
 }
+.title{
+    @apply text-4xl md:text-5xl font-bold my-2 md:leading-snug leading-snug
+}
