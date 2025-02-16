@@ -13,7 +13,7 @@ const Categories = () => {
     <div className='section-conatiner py-16 bg-white'>
       <div className='text-center'>
       <p className='subtitle'>Customer Favorites</p>
-      <h2 className='title'>Popular Categories</h2>
+      <h2 className='title md:w-[520px]'>Popular Categories</h2>
       </div>
 
       {/*category cards*/}
@@ -22,7 +22,7 @@ const Categories = () => {
             CategoryItems.map(
               (item,i) =>(
                 <div key={i} className='shadow-lg rounded-md bg-white py-6 px-5 w-72 mx-auto text-center cursor-pointer hover:-translate-y-4 duration-300 transition-all'>
-                    <div className='flex w-full mx-auto item-center '>
+                    <div className='flex justify-center w-full mx-auto item-center '>
                       <img src={item.Image} alt={item.title} className='bg-[#C1F1C6] p-5 rounded-full w-28 h-28'/>
                     </div>
                     <div className='mt-5 space-y-1'>
